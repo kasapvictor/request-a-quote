@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@root/*": [
+        "./src/*"
+      ],
+      "@app": [
+        "./src/app"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@widgets/*": [
+        "./src/widgets/*"
+      ],
+      "@features/*": [
+        "./src/features/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@entities/*": [
+        "./src/entities/*"
+      ],
+      "@test-utils": [
+        "./test-utils"
+      ]
+    },
+
+    "module": "es6",
+    "target": "es6",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    /* Bundler mode */
+    "noEmit": true,
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Linting */
+    "strict": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true
+  },
+
+  "include": ["src/**/*", "test-utils"],
+  "exclude": ["dist", "public", "node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

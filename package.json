@@ -1,0 +1,71 @@
+{
+  "name": "request-a-quote",
+  "version": "2.0.0",
+  "homepage": "https://github.com/kasapvictor/request-a-quote",
+  "author": "Victor Kasap",
+  "license": "ISC",
+  "scripts": {
+    "start": "vite --host $DEFAULT_HOST --port $DEFAULT_PORT",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "pretty": "prettier --write src",
+    "lint": "eslint --fix src",
+    "type-check": "tsc --noEmit",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "test": "vitest run",
+    "test:verbose": "vitest run --reporter verbose",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-boundaries": "^3.1.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "postcss": "^8.4.24",
+    "prettier": "^2.8.8",
+    "typescript": "5.0.4",
+    "sass": "^1.63.4",
+    "vite": "^4.3.9",
+    "browser-sync": "^2.29.3",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/user-event": "^14.5.1",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/ui": "^0.34.6",
+    "husky": "^8.0.0",
+    "jsdom": "^23.0.1",
+    "lint-staged": "^14.0.1",
+    "vitest": "^0.34.6",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "immer": "^9.0.21"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "last 4 versions",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
