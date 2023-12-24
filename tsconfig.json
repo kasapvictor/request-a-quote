@@ -46,7 +46,11 @@
     "strictNullChecks": true
   },
 
-  "include": ["src/**/*", "test-utils"],
+  "include": [
+    "src/**/*",
+    "test-utils",
+    "node_modules/vitest/globals.d.ts"
+  ],
   "exclude": ["dist", "public", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
