@@ -13,10 +13,6 @@
   padding: 0 20px;
 }
 
-.t--center {
+.text--center {
   text-align: center;
-}
-
-.hero__right {
-  margin: 0 auto;
 }

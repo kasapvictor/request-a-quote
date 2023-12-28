@@ -1,23 +1,21 @@
 import './index.css';
 
-const h1 = document.querySelector('h1') as HTMLHeadElement;
-h1.style.color = 'red';
-h1.addEventListener('mouseover', () => {
-  h1.style.color = 'blue';
-});
-h1.addEventListener('mouseleave', () => {
-  h1.style.color = 'red';
-});
+import { apiRequest } from '@shared/api';
+import { METHOD } from '@shared/api/types';
+import { log } from '@shared/lib';
 
-/*
+// const urlZip = 'https://cdn.abplogistics.site/api/?zip=97080';
+// const urlMakes = 'https://cdn.abplogistics.site/api/?makes';
+// const urlModel = 'https://cdn.abplogistics.site/api/?model=ford&year=2020';
+const url = 'https://cdn.abplogistics.site/api/?model=ford&year=2020';
+
 // API REQUEST EXAMPLE
 const foo = async () => {
   try {
-    const request = await apiRequest({ url: 'https://dummyjson.com/products', method: METHOD.GET });
+    const request = await apiRequest({ url, method: METHOD.GET });
     log('REQUEST', request);
   } catch (error) {
     log('Error', error);
   }
 };
 foo();
-*/
