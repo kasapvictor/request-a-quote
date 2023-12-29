@@ -5,6 +5,7 @@ export enum Errors {
   Required = 'Required field',
   IncorrectZip = 'Incorrect ZIP',
   Incorrect = 'Incorrect data',
+  IncorrectEmail = 'Incorrect Email',
   Network = 'Network Error',
 }
 

@@ -8,9 +8,6 @@ const MIN_LENGTH = 11;
 
 const isValidValue = (value: string): boolean => {
   const formattedValue = value.replace(/\D/g, '');
-  log('isValue', isValue(formattedValue));
-  log('isOnlyDigits', isOnlyDigits(formattedValue, MIN_LENGTH));
-  log('isCorrectLength', isCorrectLength(formattedValue, MIN_LENGTH));
 
   return [
     isValue(formattedValue),

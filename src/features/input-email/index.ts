@@ -1,18 +1,16 @@
 import { InputElements } from '@shared/types';
 
 import { eventInput, eventBlur, eventFocus } from './controllers';
-import { initZipMask } from './lib';
 import { watchers } from './view';
 
-export const initInputPhone = () => {
+export const initInputEmail = () => {
   const elements = {
-    wrapper: document.getElementById('phone'),
-    input: document.getElementById('phone-input'),
-    error: document.getElementById('phone-error'),
-    success: document.getElementById('phone-success'),
+    wrapper: document.getElementById('email'),
+    input: document.getElementById('email-input'),
+    error: document.getElementById('email-error'),
+    success: document.getElementById('email-success'),
   } as InputElements;
 
-  initZipMask(elements.input);
   eventControl(elements.input);
   watchers(elements);
 };

@@ -1,3 +1,4 @@
+import { initInputEmail } from '@features/input-email';
 import { initInputPhone } from '@features/input-phone';
 import { initInputZipFrom } from '@features/input-zip-from';
 import { initInputZipTo } from '@features/input-zip-to';
@@ -8,4 +9,5 @@ export const initRequestQuoteForm = () => {
   initInputZipFrom();
   initInputZipTo();
   initInputPhone();
+  initInputEmail();
 };
