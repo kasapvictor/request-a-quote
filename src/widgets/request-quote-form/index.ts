@@ -4,6 +4,7 @@ import { initInputZipFrom } from '@features/input-zip-from';
 import { initInputZipTo } from '@features/input-zip-to';
 import { initPrevNext } from '@features/prev-next';
 import { initSelectMake } from '@features/select-make';
+import { initSelectModel } from '@features/select-model';
 import { initSelectYear } from '@features/select-year';
 
 export const initRequestQuoteForm = () => {
@@ -12,6 +13,7 @@ export const initRequestQuoteForm = () => {
   initInputZipTo();
   initSelectYear();
   initSelectMake();
+  initSelectModel();
   initInputPhone();
   initInputEmail();
 };
