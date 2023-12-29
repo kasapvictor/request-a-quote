@@ -10,7 +10,7 @@ import { renderDisabled, renderError, renderLoad, renderSuccess } from '@shared/
 
 export const watchers = (
   elements: InputElements,
-  requestFn: (select: InputElements['select'], make: string, year: string, choice: Choices) => void,
+  buildFn: (select: InputElements['select'], make: string, year: string, choice: Choices) => void,
   choiceInstance: Choices | boolean,
 ) => {
   renderDisabled(elements.select, true);
@@ -42,15 +42,23 @@ export const watchers = (
 
   yearStore.value.state.watch((state) => {
     if (makeStore.value.state.getState()) {
-      requestFn(elements.select, makeStore.value.state.getState(), state, choiceInstance as Choices);
       renderDisabled(elements.select, false);
+      buildFn(elements.select, makeStore.value.state.getState(), state, choiceInstance as Choices);
+    } else {
+      renderSuccess(elements.success, '');
+      (choiceInstance as Choices).destroy();
+      (choiceInstance as Choices).init();
     }
   });
 
   makeStore.value.state.watch((state) => {
     if (state) {
-      requestFn(elements.select, state, yearStore.value.state.getState(), choiceInstance as Choices);
       renderDisabled(elements.select, false);
+      buildFn(elements.select, state, yearStore.value.state.getState(), choiceInstance as Choices);
+    } else {
+      renderSuccess(elements.success, '');
+      (choiceInstance as Choices).destroy();
+      (choiceInstance as Choices).init();
     }
   });
 };
