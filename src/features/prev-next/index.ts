@@ -51,12 +51,3 @@ const renderButton = (el: HTMLDivElement, originNext: HTMLDivElement, isValid: b
 const controllerPrev = (el: HTMLDivElement, originPrev: HTMLDivElement) => {
   el.onclick = () => originPrev.click();
 };
-
-// const formController = (formEl: HTMLFormElement) => {
-//   const allow = false;
-//   formEl.addEventListener('submit', (e) => {
-//     if (!allow) {
-//       e.preventDefault();
-//     }
-//   });
-// };

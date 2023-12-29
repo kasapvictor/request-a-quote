@@ -1,6 +1,6 @@
 import { phoneStore } from '@entities/input-phone';
 
-import { log, isCorrectLength, isOnlyDigits, isValue } from '@shared/lib';
+import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib';
 import { Errors, Event, InputElements, Status } from '@shared/types';
 
 const MIN_LENGTH = 11;
@@ -19,8 +19,6 @@ export const eventBlur = (el: InputElements['input']) => {
   el.addEventListener(Event.Blur, async () => {
     const value = el.value.trim();
     const isValid = isValidValue(value);
-
-    log('isValid', isValid);
 
     if (!isValid) {
       phoneStore.error.event(Errors.Required);

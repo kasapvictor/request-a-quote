@@ -29,7 +29,6 @@ export const eventBlur = (el: InputElements['input'], makeRequestFn: (value: str
       zipToStore.status.event(Status.Loading);
 
       makeRequestFn(value);
-      // zipToStore.status.event(Status.Success);
     }
   });
 };

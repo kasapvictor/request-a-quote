@@ -7,7 +7,7 @@ export const isOnlyDigits = (value: string, min: number) => {
 };
 
 export const isValidEmail = (email: string) => {
-  if (email.startsWith('.')) {
+  if (!email || email.startsWith('.')) {
     return false;
   }
 
