@@ -8,7 +8,7 @@ import { Errors, Event, InputElements, Status } from '@shared/types';
 const MIN_LENGTH = 5;
 
 const isValidValue = (value: string): boolean => {
-  return [isValue(value), isOnlyDigits(value), isCorrectLength(value, MIN_LENGTH)].every((item) => item);
+  return [isValue(value), isOnlyDigits(value, MIN_LENGTH), isCorrectLength(value, MIN_LENGTH)].every((item) => item);
 };
 
 export const eventBlur = (el: InputElements['input'], makeRequestFn: (value: string) => void) => {
