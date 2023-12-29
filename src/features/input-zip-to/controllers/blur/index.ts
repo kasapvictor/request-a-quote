@@ -2,7 +2,7 @@
 
 import { zipToStore } from '@entities/input-zip-to';
 
-import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib/validation';
+import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib';
 import { Errors, Event, InputElements, Status } from '@shared/types';
 
 const MIN_LENGTH = 5;

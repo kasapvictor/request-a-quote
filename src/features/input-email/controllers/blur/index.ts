@@ -1,6 +1,6 @@
 import { emailStore } from '@entities/input-email';
 
-import { isValue, isValidEmail } from '@shared/lib/validation';
+import { isValue, isValidEmail } from '@shared/lib';
 import { Errors, Event, InputElements, Status } from '@shared/types';
 
 const isValidValue = (value: string): boolean => {

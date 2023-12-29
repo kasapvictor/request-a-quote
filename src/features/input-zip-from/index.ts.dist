@@ -11,7 +11,7 @@ import {
 } from '@entities/input-zip-from';
 
 import { log } from '@shared/lib';
-import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib/validation';
+import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib';
 import { Errors, Event, InputElements, Load, Status, Success } from '@shared/types';
 import { renderDisabled, renderError, renderLoad, renderSuccess } from '@shared/ui';
 

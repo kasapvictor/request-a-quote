@@ -21,6 +21,7 @@ export enum Event {
   Input = 'input',
   Blur = 'blur',
   Focus = 'focus',
+  Change = 'change',
 }
 export enum Status {
   Idle,
@@ -36,6 +37,7 @@ export enum Status {
 export interface InputElements {
   wrapper: HTMLDivElement;
   input: HTMLInputElement;
+  select: HTMLSelectElement;
   error: HTMLDivElement;
   success: HTMLDivElement;
   load: HTMLDivElement;

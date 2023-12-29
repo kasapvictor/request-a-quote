@@ -1,7 +1,6 @@
 import { phoneStore } from '@entities/input-phone';
 
-import { log } from '@shared/lib';
-import { isCorrectLength, isOnlyDigits, isValue } from '@shared/lib/validation';
+import { log, isCorrectLength, isOnlyDigits, isValue } from '@shared/lib';
 import { Errors, Event, InputElements, Status } from '@shared/types';
 
 const MIN_LENGTH = 11;

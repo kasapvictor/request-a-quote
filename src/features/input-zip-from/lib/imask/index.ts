@@ -1,5 +1,5 @@
 // input-zip-from/lib/imask/index.js
-import { initImask } from '@shared/lib/imask';
+import { initImask } from '@shared/lib';
 import { InputElements } from '@shared/types';
 
 export const initZipMask = (el: InputElements['input']) => {
