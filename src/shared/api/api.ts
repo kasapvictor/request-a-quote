@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-export const BASE_URL = '';
+import { BASE_URL } from './config';
 
 export const api = axios.create({
   baseURL: BASE_URL as string,

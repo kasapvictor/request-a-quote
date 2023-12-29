@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars, no-use-before-define */
 
-import { AxiosError, Method } from 'axios';
+import { AxiosError, Method as AxiosMethod } from 'axios';
 
 export type ApiError = AxiosError<ServerError> | Error;
 
@@ -16,13 +16,13 @@ export interface ApiRequestOptions<D> {
   params?: D;
   url?: string;
   debug?: boolean;
-  method?: Method;
+  method?: AxiosMethod;
   withThrow?: boolean;
 }
 
-export enum METHOD {
-  POST = 'POST',
-  GET = 'GET',
-  PUT = 'PUT',
-  DELETE = 'DELETE',
+export enum Method {
+  Post = 'post',
+  Get = 'get',
+  Delete = 'delete',
+  Put = 'put',
 }

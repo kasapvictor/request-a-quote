@@ -5,7 +5,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { api } from './api';
 import { apiRequest } from './api-request';
 import { BASE_URL } from './config';
-import { METHOD } from './types';
+import { Method } from './types';
 
 describe('API Request Function', () => {
   let mock: AxiosMockAdapter;
@@ -20,17 +20,17 @@ describe('API Request Function', () => {
     mock.restore();
   });
 
-  // GET
-  it('1) Should be GET method', async () => {
+  // Get
+  it('1) Should be Get method', async () => {
     const mockData = { message: 'Get Done' };
     mock.onGet(url).reply(200, mockData);
 
-    const response = await apiRequest({ url, method: METHOD.GET });
+    const response = await apiRequest({ url, method: Method.Get });
     expect(response).toEqual(mockData);
   });
 
-  // POST
-  it('2) Should be POST method no data', async () => {
+  // Post
+  it('2) Should be Post method no data', async () => {
     const mockData = { message: 'Success' };
 
     mock.onPost(url).reply(200, mockData);
@@ -39,7 +39,7 @@ describe('API Request Function', () => {
     expect(response).toEqual(mockData);
   });
 
-  it('3) Should be POST method with data', async () => {
+  it('3) Should be Post method with data', async () => {
     const data = { a: 1, b: 2 };
     const mockData = { message: 'With Data' };
 
@@ -51,11 +51,11 @@ describe('API Request Function', () => {
       return [404];
     });
 
-    const response = await apiRequest({ url, method: METHOD.POST, data });
+    const response = await apiRequest({ url, method: Method.Post, data });
     expect(response).toEqual(mockData);
   });
 
-  it('4) Should be POST method with params', async () => {
+  it('4) Should be Post method with params', async () => {
     const params = { query: 'test' };
     const mockData = { message: 'With Params' };
 
@@ -67,7 +67,7 @@ describe('API Request Function', () => {
       return [404];
     });
 
-    const response = await apiRequest({ url, method: METHOD.POST, params });
+    const response = await apiRequest({ url, method: Method.Post, params });
     expect(response).toEqual(mockData);
   });
 
@@ -76,7 +76,7 @@ describe('API Request Function', () => {
     const mockData = { message: 'Put Done' };
     mock.onPut(url).reply(200, mockData);
 
-    const response = await apiRequest({ url, method: METHOD.PUT });
+    const response = await apiRequest({ url, method: Method.Put });
     expect(response).toEqual(mockData);
   });
 
@@ -85,7 +85,7 @@ describe('API Request Function', () => {
     const mockData = { message: 'Delete Done' };
     mock.onDelete(url).reply(200, mockData);
 
-    const response = await apiRequest({ url, method: METHOD.DELETE });
+    const response = await apiRequest({ url, method: Method.Delete });
     expect(response).toEqual(mockData);
   });
 
@@ -108,7 +108,7 @@ describe('API Request Function', () => {
     expect.assertions(1);
 
     try {
-      await apiRequest({ url, method: METHOD.GET });
+      await apiRequest({ url, method: Method.Get });
     } catch (err) {
       expect(err).toEqual(400);
     }
@@ -133,7 +133,7 @@ describe('API Request Function', () => {
     expect.assertions(1);
 
     try {
-      await apiRequest({ url, method: METHOD.GET });
+      await apiRequest({ url, method: Method.Get });
     } catch (err) {
       expect(err).toEqual(MOCK_ERROR);
     }
@@ -158,7 +158,7 @@ describe('API Request Function', () => {
     expect.assertions(1);
 
     try {
-      await apiRequest({ url, method: METHOD.GET, withThrow: true });
+      await apiRequest({ url, method: Method.Get, withThrow: true });
     } catch (err) {
       expect(err).toEqual(new Error(MOCK_ERROR));
     }
@@ -180,7 +180,7 @@ describe('API Request Function', () => {
       return [400];
     });
 
-    const response = await apiRequest({ url, method: METHOD.POST, data: formData });
+    const response = await apiRequest({ url, method: Method.Post, data: formData });
     expect(response).toEqual(mockData);
   });
 });

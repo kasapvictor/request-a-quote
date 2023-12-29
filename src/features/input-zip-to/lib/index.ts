@@ -1,0 +1,1 @@
+export { initZipMask } from './imask';

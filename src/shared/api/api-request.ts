@@ -4,7 +4,7 @@ import { log } from '@shared/lib';
 
 import { api } from './api';
 import { throwFormattedError } from './throw-formatted-error';
-import { METHOD, ApiError, ApiRequestOptions } from './types';
+import { Method, ApiError, ApiRequestOptions } from './types';
 
 /**
  * Makes an API request using predefined configurations.
@@ -17,7 +17,7 @@ import { METHOD, ApiError, ApiRequestOptions } from './types';
  */
 export const apiRequest = async <D>({ debug = false, withThrow = false, ...props }: ApiRequestOptions<D>) => {
   try {
-    const { method = METHOD.POST, ...options } = props;
+    const { method = Method.Post, ...options } = props;
     const response = await api({ method, ...options });
 
     if (debug) {
@@ -30,6 +30,7 @@ export const apiRequest = async <D>({ debug = false, withThrow = false, ...props
       log('Request error:', err);
     }
 
+    // throw err;
     throwFormattedError(err as ApiError, withThrow);
   }
 };
