@@ -1,7 +1,7 @@
 import { emailStore } from '@entities/input-email';
 
 import { InputElements, Status, Success } from '@shared/types';
-import { renderDisabled, renderError, renderLoad, renderSuccess } from '@shared/ui';
+import { renderError, renderLoad, renderSuccess } from '@shared/ui';
 
 export const watchers = (elements: InputElements) => {
   emailStore.error.state.watch((state) => {
@@ -11,7 +11,6 @@ export const watchers = (elements: InputElements) => {
   });
 
   emailStore.status.state.watch((state) => {
-    renderDisabled(elements.input, false);
     renderSuccess(elements.success, '');
     renderLoad(elements.load, '');
 

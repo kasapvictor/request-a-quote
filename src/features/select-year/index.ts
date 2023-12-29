@@ -6,7 +6,7 @@ import { watchers } from './view';
 
 export const initSelectYear = () => {
   const elements = {
-    wrapper: document.getElementById('year-to'),
+    wrapper: document.getElementById('year'),
     select: document.getElementById('year-select'),
     error: document.getElementById('year-error'),
     success: document.getElementById('year-success'),

@@ -15,6 +15,7 @@ export enum Success {
 
 export enum Load {
   Request = 'Checking...',
+  Loading = 'Loading...',
 }
 
 export enum Event {

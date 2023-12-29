@@ -17,8 +17,8 @@ export const eventBlur = (el: InputElements['input'], makeRequestFn: (value: str
     const isValid = isValidValue(value);
 
     if (!isValid) {
-      zipToStore.error.event(Errors.Required);
       zipToStore.status.event(Status.Error);
+      zipToStore.error.event(Errors.Required);
     }
 
     if (zipToStore.prevValue.state.getState() === value) {
