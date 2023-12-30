@@ -30,11 +30,15 @@ const watcher = (submitButton: HTMLButtonElement) => {
     },
   );
 
+  const shouldRemovesItems = document.querySelectorAll('input[name="search_terms"]');
+
   submitButton.addEventListener('click', (e) => {
     if (!$stores.getState()) {
       e.preventDefault();
 
       return false;
     }
+
+    shouldRemovesItems.forEach((item) => item.remove());
   });
 };
