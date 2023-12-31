@@ -32,5 +32,5 @@
 
 .choices.is-disabled .choices__inner,
 .choices.is-disabled .choices__input {
-  background-color: #d3d3d3 !important;
+  background-color: #d3d3d3;
 }
