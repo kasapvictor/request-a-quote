@@ -29,3 +29,8 @@
 .choices__list--single {
   padding-top: 7px;
 }
+
+.choices.is-disabled .choices__inner,
+.choices.is-disabled .choices__input {
+  background-color: #d3d3d3 !important;
+}
