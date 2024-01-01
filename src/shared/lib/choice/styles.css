@@ -27,13 +27,7 @@
 }
 
 .choices__list--single {
-  padding-top: 7px;
-}
-
-@media (max-width: 767px) {
-  .choices__list--single {
-    padding-top: 6px;
-  }
+  padding-top: 6px;
 }
 
 .choices.is-disabled .choices__inner,
