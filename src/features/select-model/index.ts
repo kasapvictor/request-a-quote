@@ -16,7 +16,7 @@ export const initSelectModel = async () => {
     load: document.getElementById('model-load'),
   } as InputElements;
 
-  const choice = initModelChoices(elements.select) as Choices;
+  const choice = initModelChoices(elements.select, elements.wrapper) as Choices;
 
   watchers(elements, buildList, choice);
   eventControl(elements.select);

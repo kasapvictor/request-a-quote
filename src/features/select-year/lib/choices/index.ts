@@ -4,8 +4,13 @@ import { initChoice } from '@shared/lib';
 import { InputElements } from '@shared/types';
 
 type Choice = { value: string; label: string };
-export const initYearChoices = (select: InputElements['select'], years: number[] | string[]) => {
-  const choice = initChoice(select, {
+
+export const initYearChoices = (
+  select: InputElements['select'],
+  parentEl: HTMLDivElement,
+  years: number[] | string[],
+) => {
+  const choice = initChoice(select, parentEl, {
     removeItemButton: true,
     // searchResultLimit: 4,
     silent: false,

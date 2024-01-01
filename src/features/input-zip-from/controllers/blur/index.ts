@@ -16,6 +16,12 @@ export const eventBlur = (el: InputElements['input'], makeRequestFn: (value: str
     const value = el.value.trim();
     const isValid = isValidValue(value);
 
+    // For debugging
+    //
+    // zipFromStore.status.event(Status.Success);
+    //
+    // return;
+
     if (!isValid) {
       zipFromStore.error.event(Errors.Required);
       zipFromStore.status.event(Status.Error);

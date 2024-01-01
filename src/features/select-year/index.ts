@@ -12,12 +12,12 @@ export const initSelectYear = () => {
     success: document.getElementById('year-success'),
   } as InputElements;
 
-  buildList(elements.select);
+  buildList(elements.select, elements.wrapper);
   eventControl(elements.select);
   watchers(elements);
 };
 
-const buildList = (select: InputElements['select']) => {
+const buildList = (select: InputElements['select'], parentEl: HTMLDivElement) => {
   if (!select) {
     return false;
   }
@@ -26,7 +26,7 @@ const buildList = (select: InputElements['select']) => {
   const pastFromNowYear = nowYear - 100;
   const years = Array.from({ length: 100 }, (_, index) => pastFromNowYear + index + 1);
 
-  initYearChoices(select, years);
+  initYearChoices(select, parentEl, years);
 };
 
 const eventControl = (el: InputElements['select']) => {

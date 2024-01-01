@@ -15,18 +15,18 @@ export const initSelectMake = async () => {
   } as InputElements;
 
   watchers(elements);
-  await buildList(elements.select);
+  await buildList(elements.select, elements.wrapper);
   eventControl(elements.select);
 };
 
-const buildList = async (select: InputElements['select']) => {
+const buildList = async (select: InputElements['select'], parentEl: HTMLDivElement) => {
   if (!select) {
     return false;
   }
 
   const makes = await makeRequest();
 
-  initMakeChoices(select, makes);
+  initMakeChoices(select, parentEl, makes);
 };
 
 const eventControl = (el: InputElements['select']) => {
